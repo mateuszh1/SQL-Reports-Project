@@ -1,13 +1,5 @@
-Select 
-c.category_id, c.category_name,
-SUM(oi.quantity * oi.unit_price) AS category_revenue
-from categories c
-join products p
-on c.category_id = p.category_id
+select o.ordate_status,count(oi.order_id) as orders_count from orders o
 join order_items oi
-on p.product_id = oi.product_id
-join orders o
-on oi.order_id = o.order_id
-where ordate_status = 'completed'
-group by c.category_id, c.category_name
-order by category_revenue desc
+on o.order_id = oi.order_id
+group by o.ordate_status
+order by orders_count desc
