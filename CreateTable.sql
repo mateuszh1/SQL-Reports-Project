@@ -1,4 +1,4 @@
-ALTER TABLE products
-ADD CONSTRAINT FK_products_categories
-FOREIGN KEY (category_id)
-REFERENCES categories(category_id);
+ALTER TABLE orders
+ADD CONSTRAINT FK_orders_customers
+FOREIGN KEY (customer_id)
+REFERENCES customers(customer_id);
