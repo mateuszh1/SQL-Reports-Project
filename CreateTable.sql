@@ -1,6 +1,7 @@
-CREATE TABLE orders (
-    order_id INT IDENTITY(1,1) PRIMARY KEY,
-    customer_id INT NOT NULL,
-    order_date DATE NOT NULL,
-    status NVARCHAR(20) NOT NULL
+CREATE TABLE order_items (
+    order_item_id INT IDENTITY(1,1) PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    unit_price DECIMAL(10,2) NOT NULL
 );
